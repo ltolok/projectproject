@@ -2,12 +2,12 @@ package lesson8;
 
 import java.util.Arrays;
 import java.util.Scanner;
+import java.util.InputMismatchException;
 
 public class Matrix {
     int nl = 3;
     int nc = 3;
     double[][] v = new double[nl][nc];
-    int n;
 
     Matrix() {
         for (int i = 0; i < nl; i++) {
@@ -30,24 +30,27 @@ public class Matrix {
     public static void main(String[] args) {
         Matrix m1 = new Matrix();
         Matrix m2 = new Matrix();
-        Matrix mrez = new Matrix(0);
+        Matrix msum = new Matrix(0);
+        Matrix mr = new Matrix(0);
         System.out.println("Матрица 1");
         m1.pr(m1.nl, m1.nc, m1.v);
         System.out.println("Матрица 2");
         m2.pr(m2.nl, m2.nc, m2.v);
         System.out.println("Матрица 3");
-        mrez.pr(mrez.nl, mrez.nc, mrez.v);
-
-        mrez.sum(3, 3, m1.v, m2.v);
+        msum.pr(msum.nl, msum.nc, msum.v);
+        System.out.println("Матрица 4");
+        msum.pr(mr.nl, mr.nc, mr.v);
+        msum.sum(msum, m1, m2);
+        System.out.println("");
         System.out.println("Матрица 3 - результат суммирования ");
-        mrez.pr(mrez.nl, mrez.nc, mrez.v);
-
+        msum.pr(msum.nl, msum.nc, msum.v);
+        System.out.println("");
         System.out.print("Введите число: ");
         Scanner scn = new Scanner(System.in);
-        int n = scn.nextInt();
-        mrez.mp(3, 3, n, m1.v);
-        System.out.println("Матрица 3 - результат умножения ");
-        mrez.pr(mrez.nl, mrez.nc, mrez.v);
+        double n = scn.nextDouble();
+        mr.mp(mr, m1, n);
+        System.out.println("Матрица 3 - результат умножения " + "Матрица 1" + "   *   " + n);
+        mr.pr(mr.nl, mr.nc, mr.v);
     }
 
     double rnd() {
@@ -64,26 +67,20 @@ public class Matrix {
         }
     }
 
-    double sum(int a, int b, double m1[][], double m2[][]) {
-        double s[][] = new double[a][b];
-        for (int i = 0; i < a; i++) {
-            for (int j = 0; j < b; j++) {
-                s[i][j] = m1[i][j] + m2[i][j];
+    void sum(Matrix msum, Matrix m1, Matrix m2) {
+        for (int i = 0; i < nl; i++) {
+            for (int j = 0; j < nc; j++) {
+                msum.v[i][j] = m1.v[i][j] + m1.v[i][j];
             }
-            ;
         }
-        return s[a][b];
-
     }
 
-    double mp(int a, int b, double c, double m1[][]) {
-        double s[][] = new double[a][b];
-        for (int i = 0; i < a; i++) {
-            for (int j = 0; j < b; j++) {
-                s[i][j] = m1[i][j] * c;
+    void mp(Matrix mr, Matrix m1, double c) {
+        for (int i = 0; i < nl; i++) {
+            for (int j = 0; j < nc; j++) {
+                mr.v[i][j] = m1.v[i][j] * c;
             }
-            ;
         }
-        return s[a][b];
     }
 }
+
