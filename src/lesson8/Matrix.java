@@ -36,9 +36,9 @@ public class Matrix {
         m1.pr(m1.nl, m1.nc, m1.v);
         System.out.println("Матрица 2");
         m2.pr(m2.nl, m2.nc, m2.v);
-        System.out.println("Матрица 3");
+        System.out.println("Матрица 3 (сумма матриц 1 и 2)");
         msum.pr(msum.nl, msum.nc, msum.v);
-        System.out.println("Матрица 4");
+        System.out.println("Матрица 4(произведение матрицы 1 на число)");
         msum.pr(mr.nl, mr.nc, mr.v);
         msum.sum(msum, m1, m2);
         System.out.println("");

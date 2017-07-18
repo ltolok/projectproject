@@ -1,26 +1,40 @@
 package lesson8;
 
 public class Person {
-    String fullName;
-    int age;
+    private String fullName;
+    private int age;
 
-    Person() {
-        System.out.println("Персона 1  создана ");
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public int getAge() {
+
+        return age;
+    }
+
+    public String getFullName() {
+
+        return fullName;
+    }
+
+    public void setFullName(String fullName) {
+
+        this.fullName = fullName;
     }
 
     Person(String name, int a) {
-        fullName = name;
-        age = a;
+        this.fullName = name;
+        this.age = a;
     }
 
     public static void main(String[] args) {
-        Person p1 = new Person();
-        p1.fullName = "Петров Петр Петрович";
-        p1.age = 25;
-        pr(p1.fullName, p1.age);
-        Person p2 = new Person("Иванов Иван Иванович", 20);
-        System.out.println("Персона 2  создана ");
-        pr(p2.fullName, p2.age);
+        Person p1 = new Person("AAAAAAA BB CC", 0);
+        p1.setFullName("Петров Петр Петрович");
+        p1.setAge(25);
+        p1.pr();
+        Person p2 = new Person("Иванов Иван Иванович", 30);
+        p2.pr();
     }
 
     void move() {
@@ -29,8 +43,9 @@ public class Person {
     void talk() {
     }
 
-    static void pr(String n, int a) {
-        System.out.println(n + "    " + a);
+    void pr() {
+        System.out.println("Полное имя      " + this.getFullName());
+        System.out.println("Возраст     " + this.getAge());
     }
 }
 
