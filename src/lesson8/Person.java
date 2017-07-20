@@ -28,13 +28,18 @@ public class Person {
         this.age = a;
     }
 
+    Person() {
+    }
+
     public static void main(String[] args) {
-        Person p1 = new Person("AAAAAAA BB CC", 0);
+        Person p1 = new Person();
         p1.setFullName("Петров Петр Петрович");
         p1.setAge(25);
-        p1.pr();
+        p1.print();
         Person p2 = new Person("Иванов Иван Иванович", 30);
-        p2.pr();
+        p2.print();
+
+
     }
 
     void move() {
@@ -43,7 +48,7 @@ public class Person {
     void talk() {
     }
 
-    void pr() {
+    void print() {
         System.out.println("Полное имя      " + this.getFullName());
         System.out.println("Возраст     " + this.getAge());
     }

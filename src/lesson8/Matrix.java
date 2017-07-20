@@ -1,10 +1,11 @@
 package lesson8;
 
 import java.util.Scanner;
+import java.util.Arrays;
 
 public class Matrix {
-    int nl = 3;
-    int nc = 3;
+    static int nl = 3;
+    static int nc = 3;
     double[][] v = new double[nl][nc];
 
     Matrix() {
@@ -35,7 +36,6 @@ public class Matrix {
         m1.print();
         System.out.println("Матрица 2");
         m2.print();
-
         System.out.println("Матрица 3 (сумма матриц 1 и 2)");
         msum.print();
 
@@ -70,10 +70,14 @@ public class Matrix {
     }
 
     void sum(Matrix msum, Matrix m1, Matrix m2) {
-        for (int i = 0; i < nl; i++) {
-            for (int j = 0; j < nc; j++) {
-                msum.v[i][j] = m1.v[i][j] + m2.v[i][j];
+        if (m1.v.length == m2.v.length & m1.v[0].length == m1.v[0].length) {
+            for (int i = 0; i < nl; i++) {
+                for (int j = 0; j < nc; j++) {
+                    msum.v[i][j] = m1.v[i][j] + m2.v[i][j];
+                }
             }
+        } else {
+            System.out.println("Матрицы разной размерности. Операция суммирования невозможна!");
         }
     }
 

@@ -12,7 +12,7 @@ public class Prog4 {
             System.out.println("Четверг");
         } else if (args[0].equals("5")) {
             System.out.println("Пятница");
-        } else if (args[0].equals("6")||args[0].equals("7")) {
+        } else if (args[0].equals("6") || args[0].equals("7")) {
             System.out.println("Выходной");
         }
     }

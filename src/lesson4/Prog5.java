@@ -19,8 +19,6 @@ public class Prog5 {
                 System.out.println("Пятница");
                 break;
             case "6":
-                System.out.println("Выходной");
-                break;
             case "7":
                 System.out.println("Выходной");
         }

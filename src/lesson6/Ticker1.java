@@ -14,10 +14,9 @@ public class Ticker1 {
 
     public static void tick(int t[]) {
         for (int i = 0; i < t.length; i++) {
-            t[i] = rnd();
+            t[i] = random();
         }
-        pr(t);
-        return;
+        print(t);
     }
 
     public static void tick1(int t[]) {
@@ -26,9 +25,11 @@ public class Ticker1 {
             for (int j = 0; j < t.length; j++) {
                 if (t[j] == 0) {
                     t[j] = 1;
-                } else t[j] = 0;
+                } else {
+                    t[j] = 0;
+                }
             }
-            pr(t);
+            print(t);
         }
     }
 
@@ -37,7 +38,7 @@ public class Ticker1 {
         for (int i = 0; i < t.length; i++) {
             System.arraycopy(t, i, t, i + 1, t.length - i - 1);
             t[i] = 0;
-            pr(t);
+            print(t);
         }
     }
 
@@ -50,13 +51,12 @@ public class Ticker1 {
         }
     }
 
-    public static int rnd() {
+    public static int random() {
         double num = Math.random() * 2;
-        int rand = (int) num;
-        return rand;
+        return (int) num;
     }
 
-    public static void pr(int t[]) {
+    public static void print(int t[]) {
         System.out.println(Arrays.toString(t));
     }
 }
