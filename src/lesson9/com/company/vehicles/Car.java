@@ -5,20 +5,16 @@ import lesson9.com.company.details.Engine;
 
 public class Car {
     public String marka;
-    public  char carClass;
+    public char carClass;
     public double weight;
     public Driver driver;
     public Engine engine;
 
-    Car(){};
-
-     public void setWeight(double weight) {
-
+    public void setWeight(double weight) {
         this.weight = weight;
     }
 
     public double getWeight() {
-
         return weight;
     }
 
@@ -38,17 +34,39 @@ public class Car {
         return carClass;
     }
 
+    public Driver getDriver() {
+        return driver;
+    }
+
+    public void setDriver(Driver driver) {
+        this.driver = driver;
+    }
+
+    public Engine getEngine() {
+        return engine;
+    }
+
+    public void setEngine(Engine engine) {
+        this.engine = engine;
+    }
+
     public static void main(String[] args) {
         Car car = new Car();
         car.setMarka("Toyota Corolla");
         car.setCarClass('C');
         car.setWeight(1100);
+
         Driver driver = new Driver();
         driver.setFullName("Петров Федор Иванович");
         driver.setExperience(7);
+
         Engine engine = new Engine();
         engine.setPower(122);
         engine.setCompany("Германия");
+
+        car.setDriver(driver);
+        car.setEngine(engine);
+
         car.printInfo();
         car.start();
         car.turnRight();
@@ -68,12 +86,13 @@ public class Car {
         System.out.println("Поворот направо");
     }
 
-    void turnLeft(){
-        System.out.println("Поворот налево");}
+    void turnLeft() {
+        System.out.println("Поворот налево");
+    }
 
     void printInfo() {
-        System.out.println("Автомобиль   "+this.marka+" Класс  "+this.carClass + " "+ " Вес "+this.weight);
-        System.out.println("Мощность"+ this.engine.getPower() +"  Производитель  "+ this.engine.getCompany());
-        System.out.println("Водитель  "+this.driver.getFullName()+" Стаж вождения  "+this.driver.getExperience());
+        System.out.println("Автомобиль   " + this.marka + " Класс  " + this.carClass + " " + " Вес " + this.weight);
+        System.out.println("Мощность" + this.engine.getPower() + "  Производитель  " + this.engine.getCompany());
+        System.out.println("Водитель  " + this.driver.getFullName() + " Стаж вождения  " + this.driver.getExperience());
     }
 }
