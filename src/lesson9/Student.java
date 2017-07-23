@@ -41,12 +41,12 @@ public class Student {
         System.out.print("Студент");
         st1.print();
         System.out.print("Аспирант  ");
-        Student st2 = new Aspirant("Петр", "Петров", "Группа 1а",1200, "Тема научной работы HHHHQQQEEECCC");
+        Student st2 = new Aspirant("Петр", "Петров", "Группа 1а", 1200, "Тема научной работы HHHHQQQEEECCC");
         st2.print();
     }
 
     void print() {
-        System.out.println("    " + this.firstName + " " + this.lastName + "  " + this.group+"Стипендия  " +this.sum );
+        System.out.println("    " + this.firstName + " " + this.lastName + "  " + this.group + "Стипендия  " + this.sum);
     }
 
     double getScholarship() {

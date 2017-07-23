@@ -14,8 +14,9 @@ public class Recursion {
                 print(a + 1, b);
             }
         } else {
-            if(a<b){
-            print(a - 1, b);}
+            if (a < b) {
+                print(a - 1, b);
+            }
         }
     }
 }

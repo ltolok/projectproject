@@ -24,9 +24,14 @@ public class Engine {
 
         return power;
     }
-    public Engine(){};
+
+    public Engine() {
+    }
+
+    ;
+
     public static void main(String[] args) {
-        Engine engine= new Engine();
+        Engine engine = new Engine();
         engine.setPower(102);
         engine.setCompany("Япония");
     }

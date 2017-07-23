@@ -69,7 +69,7 @@ public class Matrix {
         }
     }
 
-    void sum( Matrix m1, Matrix m2) {
+    void sum(Matrix m1, Matrix m2) {
         if (m1.v.length == m2.v.length && m1.v[0].length == m2.v[0].length) {
             for (int i = 0; i < nl; i++) {
                 for (int j = 0; j < nc; j++) {
