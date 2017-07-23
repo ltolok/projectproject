@@ -41,7 +41,7 @@ public class Matrix {
 
         System.out.println("Матрица 4(произведение матрицы 1 на число)");
         msum.print();
-        msum.sum(msum, m1, m2);
+        msum.sum(m1, m2);
         System.out.println();
 
         System.out.println("Матрица 3 - результат суммирования ");
@@ -51,7 +51,7 @@ public class Matrix {
         System.out.print("Введите число: ");
         Scanner scn = new Scanner(System.in);
         double n = scn.nextDouble();
-        mr.multiply(mr, m1, n);
+        mr.multiply(m1, n);
         System.out.println("Матрица 3 - результат умножения " + "Матрица 1" + "   *   " + n);
         mr.print();
     }
@@ -69,11 +69,11 @@ public class Matrix {
         }
     }
 
-    void sum(Matrix msum, Matrix m1, Matrix m2) {
-        if (m1.v.length == m2.v.length & m1.v[0].length == m1.v[0].length) {
+    void sum( Matrix m1, Matrix m2) {
+        if (m1.v.length == m2.v.length && m1.v[0].length == m2.v[0].length) {
             for (int i = 0; i < nl; i++) {
                 for (int j = 0; j < nc; j++) {
-                    msum.v[i][j] = m1.v[i][j] + m2.v[i][j];
+                    this.v[i][j] = m1.v[i][j] + m2.v[i][j];
                 }
             }
         } else {
@@ -81,10 +81,10 @@ public class Matrix {
         }
     }
 
-    void multiply(Matrix mr, Matrix m1, double c) {
+    void multiply(Matrix m1, double c) {
         for (int i = 0; i < nl; i++) {
             for (int j = 0; j < nc; j++) {
-                mr.v[i][j] = m1.v[i][j] * c;
+                this.v[i][j] = m1.v[i][j] * c;
             }
         }
     }
