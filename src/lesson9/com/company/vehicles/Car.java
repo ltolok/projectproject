@@ -4,11 +4,14 @@ import lesson9.com.company.professions.Driver;
 import lesson9.com.company.details.Engine;
 
 public class Car {
-    public String marka;
-    public char carClass;
-    public double weight;
-    public Driver driver;
-    public Engine engine;
+    private String marka;
+    private char carClass;
+    private double weight;
+    private Driver driver;
+    private Engine engine;
+
+    public Car() {
+    }
 
     public void setWeight(double weight) {
         this.weight = weight;
@@ -74,25 +77,25 @@ public class Car {
         car.stop();
     }
 
-    void start() {
+    private void start() {
         System.out.println("Поехали");
     }
 
-    void stop() {
+    private void stop() {
         System.out.println("Останавливаемся");
     }
 
-    void turnRight() {
+    private void turnRight() {
         System.out.println("Поворот направо");
     }
 
-    void turnLeft() {
+    private void turnLeft() {
         System.out.println("Поворот налево");
     }
 
     void printInfo() {
-        System.out.println("Автомобиль   " + this.marka + " Класс  " + this.carClass + " " + " Вес " + this.weight);
-        System.out.println("Мощность" + this.engine.getPower() + "  Производитель  " + this.engine.getCompany());
-        System.out.println("Водитель  " + this.driver.getFullName() + " Стаж вождения  " + this.driver.getExperience());
+        System.out.println("Автомобиль   " + getMarka() + " Класс  " + getCarClass() + " " + " Вес " + getWeight());
+        System.out.println("Мощность" + engine.getPower() + "  Производитель  " + engine.getCompany());
+        System.out.println("Водитель  " + driver.getFullName() + " Стаж вождения  " + driver.getExperience());
     }
 }

@@ -3,21 +3,17 @@ package lesson9.com.company.vehicles;
 import lesson9.com.company.details.Engine;
 import lesson9.com.company.professions.Driver;
 
-
 public class SportCar extends Car {
-    public int speed;
+    private int speed;
 
     public SportCar() {
-        super();
     }
 
-    ;
-
-    public void setSpeed(int carrying) {
-        this.speed = carrying;
+    public void setSpeed(int speed) {
+        this.speed = speed;
     }
 
-    public int getCarrying() {
+    public int getSpeed() {
 
         return speed;
     }
@@ -28,20 +24,23 @@ public class SportCar extends Car {
         lorry.setMarka("Ferrari");
         lorry.setCarClass('S');
         lorry.setWeight(115);
+
         Driver driver = new Driver();
         driver.setFullName("Александров Александр Иванович");
         driver.setExperience(12);
+
         Engine engine = new Engine();
         engine.setPower(150);
         engine.setCompany("Италия");
+
         lorry.setDriver(driver);
         lorry.setEngine(engine);
         lorry.printInfo();
     }
 
     void printInfo() {
-        System.out.println("Автомобиль   " + this.marka + " Класс  " + this.carClass + " " + " Вес " + this.weight + " Максимальная скорость  " + this.speed);
-        System.out.println("Мощность" + this.engine.getPower() + "  Производитель  " + this.engine.getCompany());
-        System.out.println("Водитель  " + this.driver.getFullName() + " Стаж вождения  " + this.driver.getExperience());
+        System.out.println("Автомобиль   " + getMarka() + " Класс  " + getCarClass() + " " + " Вес " + getWeight() + " Максимальная скорость  " + getSpeed());
+        System.out.println("Мощность" + getEngine().getPower() + "  Производитель  " + getEngine().getCompany());
+        System.out.println("Водитель  " + getDriver().getFullName() + " Стаж вождения  " + getDriver().getExperience());
     }
 }

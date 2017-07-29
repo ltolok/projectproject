@@ -3,7 +3,10 @@ package lesson9.com.company.professions;
 import lesson8.Person;
 
 public class Driver extends Person {
-    public int experience;
+    private int experience;
+
+    public Driver() {
+    }
 
     public void setExperience(int experience) {
         this.experience = experience;
@@ -11,10 +14,6 @@ public class Driver extends Person {
 
     public int getExperience() {
         return experience;
-    }
-
-    public Driver() {
-        super();
     }
 
     public static void main(String[] args) {

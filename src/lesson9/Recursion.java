@@ -3,7 +3,6 @@ package lesson9;
 
 public class Recursion {
     public static void main(String[] args) {
-        // print(3, 5);
         print(7, 1);
     }
 

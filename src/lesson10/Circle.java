@@ -1,12 +1,43 @@
 package lesson10;
 
 public class Circle extends Shape {
-    int x, y, c;
+    private int x, y, c;
 
-    Circle(int a, int b, int r) {
+    public Circle(String color, int a, int b, int r) {
+        super(color);
         x = a;
         y = b;
         c = r;
+    }
+
+    public void setC(int c) {
+
+        this.c = c;
+    }
+
+    public int getC() {
+
+        return c;
+    }
+
+    public void setY(int y) {
+
+        this.y = y;
+    }
+
+    public int getY() {
+
+        return y;
+    }
+
+    public void setX(int x) {
+
+        this.x = x;
+    }
+
+    public int getX() {
+
+        return x;
     }
 
     @Override
@@ -14,7 +45,6 @@ public class Circle extends Shape {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
-
         Circle circle = (Circle) o;
 
         if (x != circle.x) return false;
@@ -32,14 +62,13 @@ public class Circle extends Shape {
     }
 
     public static void main(String[] args) {
-        Circle circle = new Circle(1, 1, 2);
+        Circle circle = new Circle("red", 1, 1, 2);
+
         circle.draw();
 
     }
 
-    public void draw() {
-        System.out.println("Рисую круг   " + x + "  " + y + " " + "  " + c);
+    void draw() {
+        System.out.println("Рисую круг   " + getColor() + "  " + x + "  " + y + " " + "  " + c);
     }
-
-    ;
 }

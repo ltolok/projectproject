@@ -1,11 +1,25 @@
 package lesson9;
 
 public class Student {
-    public String firstName, lastName;
-    public String group;
-    public double sum;
+    private String firstName, lastName, group;
+    private double sum;
 
-    public void setFirstName(String fullName) {
+    public Student(String a, String b, String g, double c) {
+        firstName = a;
+        lastName = b;
+        group = g;
+        sum = c;
+    }
+
+    public void setSum(double sum) {
+        this.sum = sum;
+    }
+
+    public double getSum() {
+        return sum;
+    }
+
+    public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
@@ -29,29 +43,24 @@ public class Student {
         return group;
     }
 
-    public Student(String a, String b, String g, double c) {
-        this.firstName = a;
-        this.lastName = b;
-        this.group = g;
-        this.sum = c;
-    }
-
     public static void main(String[] args) {
-        Student st1 = new Student("Иван", "Иванов", "Группа 1", 1100);
-        System.out.print("Студент");
-        st1.print();
-        System.out.print("Аспирант  ");
-        Student st2 = new Aspirant("Петр", "Петров", "Группа 1а", 1200, "Тема научной работы HHHHQQQEEECCC");
-        st2.print();
+        Student[] st = new Student[2];
+        st[0] = new Student("Владимир", "Петров", "Группа 3", 0);
+        st[1] = new Aspirant("Владимир", "Вовк", "Группа 3A", 0, "Научная работа аспиранта");
+        for (Student student : st) {
+            student.getScholarship();
+            student.print();
+        }
     }
 
     void print() {
-        System.out.println("    " + this.firstName + " " + this.lastName + "  " + this.group + "Стипендия  " + this.sum);
+        System.out.println(firstName + " " + lastName + "   " + group + "      Стипендия  " + getScholarship());
     }
 
     double getScholarship() {
         return 1100;
     }
-
 }
+
+
 

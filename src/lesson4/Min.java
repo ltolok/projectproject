@@ -11,7 +11,7 @@ public class Min {
             if (in.hasNextInt()) {
                 n = in.nextInt();
                 k = n < 0 ? -n : n;
-                if (i == 1 | min > k) {
+                if (i == 1 || min > k) {
                     min = k;
                 }
             } else {

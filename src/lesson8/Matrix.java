@@ -1,11 +1,10 @@
 package lesson8;
 
 import java.util.Scanner;
-import java.util.Arrays;
 
 public class Matrix {
     static int nl = 3;
-    static int nc = 3;
+    static int nc = 4;
     double[][] v = new double[nl][nc];
 
     Matrix() {
@@ -27,33 +26,25 @@ public class Matrix {
     }
 
     public static void main(String[] args) {
-        Matrix m1 = new Matrix();
-        Matrix m2 = new Matrix();
-        Matrix msum = new Matrix(0);
-        Matrix mr = new Matrix(0);
-
+        Matrix matrix1 = new Matrix();
+        Matrix matrix2 = new Matrix();
+        Matrix matrixsum = new Matrix(0);
+        Matrix matrixmp = new Matrix(0);
         System.out.println("Матрица 1");
-        m1.print();
+        matrix1.print();
         System.out.println("Матрица 2");
-        m2.print();
-        System.out.println("Матрица 3 (сумма матриц 1 и 2)");
-        msum.print();
-
-        System.out.println("Матрица 4(произведение матрицы 1 на число)");
-        msum.print();
-        msum.sum(m1, m2);
+        matrix2.print();
+        matrixsum.sum(matrix1, matrix2);
         System.out.println();
-
         System.out.println("Матрица 3 - результат суммирования ");
-        msum.print();
+        matrixsum.print();
         System.out.println();
-
         System.out.print("Введите число: ");
         Scanner scn = new Scanner(System.in);
         double n = scn.nextDouble();
-        mr.multiply(m1, n);
-        System.out.println("Матрица 3 - результат умножения " + "Матрица 1" + "   *   " + n);
-        mr.print();
+        matrixmp.multiply(matrix1, n);
+        System.out.println("Матрица 4 - результат умножения " + "Матрица 1" + "   *   " + n);
+        matrixmp.print();
     }
 
     double random() {
