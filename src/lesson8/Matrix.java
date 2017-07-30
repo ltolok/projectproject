@@ -2,7 +2,8 @@ package lesson8;
 
 import java.util.Scanner;
 
-public class Matrix {
+public class
+Matrix {
     static int nl = 3;
     static int nc = 4;
     double[][] v = new double[nl][nc];

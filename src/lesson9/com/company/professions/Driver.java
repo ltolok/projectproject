@@ -5,9 +5,6 @@ import lesson8.Person;
 public class Driver extends Person {
     private int experience;
 
-    public Driver() {
-    }
-
     public void setExperience(int experience) {
         this.experience = experience;
     }

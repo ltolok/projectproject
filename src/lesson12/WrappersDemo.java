@@ -9,11 +9,14 @@ public class WrappersDemo {
         Double s1= new Double(123456.1234);
         Double s2= new Double("123456.1234");
         Double s3 = Double.valueOf("123456.1234");
-        Double s4 = Double.parseDouble("456318647.123");
+        Double s4 = Double.parseDouble("123456.1234");
+        String s6= Double.toString(123456.1234);
 
         System.out.println(s1);
         System.out.println(s2);
         System.out.println(s3);
         System.out.println(s4);
+        System.out.println(s5);
+        System.out.println(s6);
     }
 }

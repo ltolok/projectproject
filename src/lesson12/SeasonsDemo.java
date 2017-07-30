@@ -26,16 +26,15 @@ public class SeasonsDemo {
                 break;
             }
             case SUMMER: {
-                System.out.println("Мое любимое время года весна");
+                System.out.println("Мое любимое время года лето");
                 break;
             }
             case AUTUMN: {
-                System.out.println("Мое любимое время года весна");
+                System.out.println("Мое любимое время года осень");
                 break;
             }
         }
     }
-
 }
 
 

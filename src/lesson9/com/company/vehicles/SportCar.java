@@ -6,9 +6,6 @@ import lesson9.com.company.professions.Driver;
 public class SportCar extends Car {
     private int speed;
 
-    public SportCar() {
-    }
-
     public void setSpeed(int speed) {
         this.speed = speed;
     }

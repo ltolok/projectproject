@@ -6,9 +6,6 @@ import lesson9.com.company.professions.Driver;
 public class Lorry extends Car {
     private int carrying;
 
-    public Lorry() {
-    }
-
     public void setCarrying(int carrying) {
         this.carrying = carrying;
     }
