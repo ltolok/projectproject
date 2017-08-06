@@ -93,7 +93,7 @@ public class Student {
         System.out.println(toString());
     }
 
-    private static double getScholarship() {
+    public static double getScholarship() {
         return 1100;
     }
 }

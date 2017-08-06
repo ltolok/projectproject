@@ -1,6 +1,11 @@
 package lesson12;
 
 public class Pants extends Clothing implements MensClothing, WomensClothing {
+    @Override
+    public String toString() {
+        return "Брюки: Размер  " + getSize().getEuroSize() + "  (" + getSize().getDescription() + ")" + "   цена  " + getCost() + "  цвет " + getColor();
+    }
+
     public void clotheaMan() {
         clotheprint();
     }
@@ -10,6 +15,6 @@ public class Pants extends Clothing implements MensClothing, WomensClothing {
     }
 
     public void clotheprint() {
-        System.out.println("Брюки:   " + "Размер " + getSize().getEuroSize() + "  (" + getSize().getDescription() + ")" + "   цена  " + getCost() + "  цвет " + getColor());
+        System.out.println(toString());
     }
 }

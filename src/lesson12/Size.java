@@ -12,8 +12,19 @@ public enum Size {
         this.euroSize = euroSize;
     }
 
+    public void setEuroSize(int euroSize) {
+        this.euroSize = euroSize;
+    }
+
     public int getEuroSize() {
         return euroSize;
+    }
+
+    @Override
+    public String toString() {
+        return "Size{" +
+                "euroSize=" + euroSize +
+                '}';
     }
 
     public String getDescription() {
