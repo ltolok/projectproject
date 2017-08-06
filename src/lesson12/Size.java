@@ -17,6 +17,6 @@ public enum Size {
     }
 
     public String getDescription() {
-        return "Взрослый размер одежды";
+        return "Взрослый размер";
     }
 }
