@@ -1,7 +1,13 @@
 package lesson12;
 
 public class Atelier {
+    @Override
+    public String toString() {
+        return "Atelier{}";
+    }
+
     public static void main(String[] args) {
+
         Clothing[] clothing = new Clothing[6];
         clothing[0] = new Tshirt();
         clothing[0].setSize(Size.M);
