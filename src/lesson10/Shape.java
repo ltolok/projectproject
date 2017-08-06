@@ -7,21 +7,12 @@ public abstract class Shape {
         color = cl;
     }
 
-
     public void setColor(String color) {
         this.color = color;
     }
 
     public String getColor() {
-
         return color;
-    }
-
-    @Override
-    public String toString() {
-        return "Shape{" +
-                "color='" + color + '\'' +
-                '}';
     }
 
     @Override
@@ -37,6 +28,12 @@ public abstract class Shape {
         return color != null ? color.hashCode() : 0;
     }
 
-    abstract void draw();
+    public abstract void draw();
 
+    @Override
+    public String toString() {
+        return "Shape{" +
+                "color='" + color + '\'' +
+                '}';
+    }
 }

@@ -41,15 +41,15 @@ public class Person {
         person2.talk();
     }
 
-    void move() {
+    public void move() {
         System.out.println("Движется");
     }
 
-    void talk() {
+    public void talk() {
         System.out.println("Говорит");
     }
 
-    void print() {
+    public void print() {
         System.out.println("ФИО    " + this.getFullName());
         System.out.println("Возраст     " + this.getAge());
     }

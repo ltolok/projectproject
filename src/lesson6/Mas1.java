@@ -1,7 +1,5 @@
 package lesson6;
 
-import java.util.*;
-
 public class Mas1 {
     public static void main(String[] args) {
         String mas[][] = new String[3][6];

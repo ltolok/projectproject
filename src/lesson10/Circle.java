@@ -2,7 +2,6 @@ package lesson10;
 
 public class Circle extends Shape {
     private int x, y, c;
-
     public Circle(String color, int a, int b, int r) {
         super(color);
         x = a;
@@ -11,32 +10,26 @@ public class Circle extends Shape {
     }
 
     public void setC(int c) {
-
         this.c = c;
     }
 
     public int getC() {
-
         return c;
     }
 
     public void setY(int y) {
-
         this.y = y;
     }
 
     public int getY() {
-
         return y;
     }
 
     public void setX(int x) {
-
         this.x = x;
     }
 
     public int getX() {
-
         return x;
     }
 
@@ -61,14 +54,25 @@ public class Circle extends Shape {
         return result;
     }
 
+    @Override
+    public String toString() {
+        return "Circle{" +
+                "x=" + x +
+                ", y=" + y +
+                ", c=" + c
+                + " " +
+                ",color='" + getColor() + '\'' +
+                '}';
+    }
+
+
     public static void main(String[] args) {
         Circle circle = new Circle("red", 1, 1, 2);
-
         circle.draw();
 
     }
 
-    void draw() {
-        System.out.println("Рисую круг   " + getColor() + "  " + x + "  " + y + " " + "  " + c);
+    public void draw() {
+        System.out.println(toString());
     }
 }

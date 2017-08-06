@@ -1,7 +1,7 @@
 package lesson10;
 
 public class Rectangle extends Shape {
-    public int x1, y1, x2, y2;
+    private int x1, y1, x2, y2;
 
     public Rectangle(String color, int a, int b, int a1, int b1) {
         super(color);
@@ -65,8 +65,20 @@ public class Rectangle extends Shape {
         return result;
     }
 
+    @Override
+    public String toString() {
+        return "Rectangle{" +
+                "x1=" + x1 +
+                ", y1=" + y1 +
+                ", x2=" + x2 +
+                ", y2=" + y2
+                + ",color= " + getColor() + '\'' +
+                '}';
+    }
+
     public static void main(String[] args) {
         Rectangle rectangle = new Rectangle("blu", 1, 1, 5, 5);
+        rectangle.draw();
         Shape[] figure = new Shape[2];
         figure[0] = new Circle("green", 2, 5, 4);
         figure[1] = new Rectangle("black", 1, 1, 5, 5);
@@ -75,7 +87,7 @@ public class Rectangle extends Shape {
         }
     }
 
-    void draw() {
-        System.out.println("Рисую прямоугольник   " + getColor() + " " + x1 + " " + y1 + " " + x2 + "  " + y2);
+    public void draw() {
+        System.out.println(toString());
     }
 }

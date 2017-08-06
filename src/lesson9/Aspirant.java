@@ -13,26 +13,40 @@ public class Aspirant extends Student {
     }
 
     public String getScwork() {
-
         return scwork;
     }
 
-    public static void main(String[] args) {
-        Aspirant aspirant = new Aspirant("Александр", "Петров", "Группа 2", 1200, "Тема научной работы BBBXXXSSS");
-        aspirant.print();
-        aspirant.setFirstName("Иван");
-        aspirant.setLastName("Иванoв");
-        aspirant.setGroup("Группа А1");
-        aspirant.setScwork("Тема научной работы FFFDDDSS");
-        aspirant.print();
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Aspirant aspirant = (Aspirant) o;
+
+        return scwork != null ? scwork.equals(aspirant.scwork) : aspirant.scwork == null;
     }
 
+    @Override
+    public int hashCode() {
+        return scwork != null ? scwork.hashCode() : 0;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "firstName='" + getFirstName() + '\'' +
+                ", lastName='" + getLastName() + '\'' +
+                ", group='" + getGroup() + '\'' +
+                ", sum=" + getSum() + '\'' +
+                ", scwork= " + getScwork() +
+                '}';
+    }
 
     public void print() {
-        System.out.println(getFirstName() + " " + getLastName() + "   " + getGroup() + "   " + getScwork() + "   " + "Стипедия  " + getScholarship());
+        System.out.println(toString());
     }
 
-    public double getScholarship() {
+    public static double getScholarship() {
         return 1200.00;
     }
 }
