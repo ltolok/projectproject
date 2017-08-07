@@ -3,17 +3,14 @@ package lesson9;
 public class Aspirant extends Student {
     private String scwork;
 
-    public Aspirant(String a, String b, String g, double c, String d) {
-        super(a, b, g, c);
-        this.scwork = d;
-    }
-
-    public void setScwork(String scwork) {
-        this.scwork = scwork;
-    }
-
-    public String getScwork() {
-        return scwork;
+    @Override
+    public String toString() {
+        return "Aspirant{" +
+                "firstName='" + getFirstName() + '\'' +
+                ", lastName='" + getLastName() + '\'' +
+                ", group='" + getGroup() + '\'' +
+                "scwork='" + scwork + '\''
+                ;
     }
 
     @Override
@@ -31,22 +28,24 @@ public class Aspirant extends Student {
         return scwork != null ? scwork.hashCode() : 0;
     }
 
-    @Override
-    public String toString() {
-        return "Student{" +
-                "firstName='" + getFirstName() + '\'' +
-                ", lastName='" + getLastName() + '\'' +
-                ", group='" + getGroup() + '\'' +
-                ", sum=" + getSum() + '\'' +
-                ", scwork= " + getScwork() +
-                '}';
+    public Aspirant(String a, String b, String g, String d) {
+        super(a, b, g);
+        this.scwork = d;
+    }
+
+    public void setScwork(String scwork) {
+        this.scwork = scwork;
+    }
+
+    public String getScwork() {
+        return scwork;
     }
 
     public void print() {
-        System.out.println(toString());
+        System.out.println(toString() + ",  Scholarship= " + getScholarship() + "}");
     }
 
-    public static double getScholarship() {
+    public double getScholarship() {
         return 1200.00;
     }
 }
