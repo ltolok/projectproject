@@ -10,6 +10,9 @@ public class PrintableDemo {
 
         for (Printable printable : bookshop)
             printable.print();
+
+        printMagazines(bookshop);
+        printBooks(bookshop);
     }
 
     private static void printMagazines(Printable[] bookshop) {
