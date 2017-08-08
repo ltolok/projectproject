@@ -1,6 +1,5 @@
 package lesson9;
 
-
 public class Recursion {
     public static void main(String[] args) {
         print(7, 1);
