@@ -3,12 +3,9 @@ package lesson13;
 public class Employee {
     private String fullname;
     private double salary;
-    private Employee employee;
-
-    Employee() {
-    }
 
     @Override
+
     public String toString() {
         return "Employee{" +
                 "fullname='" + fullname + '\'' +
