@@ -50,8 +50,7 @@ public class Person {
     }
 
     public void print() {
-        System.out.println("ФИО    " + this.getFullName());
-        System.out.println("Возраст     " + this.getAge());
+        System.out.printf("Фамилия Имя Отчество %1$20s%n" + "Возраст              %2$d%n", this.getFullName(), this.getAge());
     }
 }
 

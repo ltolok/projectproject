@@ -9,7 +9,7 @@ public class Aspirant extends Student {
                 "firstName='" + getFirstName() + '\'' +
                 ", lastName='" + getLastName() + '\'' +
                 ", group='" + getGroup() + '\'' +
-                "scwork='" + scwork + '\''
+                ", scwork= '" + scwork + '\''
                 ;
     }
 
@@ -17,9 +17,7 @@ public class Aspirant extends Student {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
         Aspirant aspirant = (Aspirant) o;
-
         return scwork != null ? scwork.equals(aspirant.scwork) : aspirant.scwork == null;
     }
 

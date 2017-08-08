@@ -30,9 +30,7 @@ public class Circle {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
         Circle circle = (Circle) o;
-
         if (Double.compare(circle.radius, radius) != 0) return false;
         if (Double.compare(circle.area, area) != 0) return false;
         return Double.compare(circle.circumference, circumference) == 0;
@@ -57,9 +55,9 @@ public class Circle {
         double radius = sc.nextDouble();
         Circle circle = new Circle();
         circle.setRadius(radius);
-        System.out.println("Площадь круга с радиусом" + "  " + circle.radius + "=  " + circle.area());
-        System.out.println("Длина окружности с радиусом" + "  " + circle.radius + "=  " + circle.circumference);
         System.out.println(circle);
+        System.out.println("Площадь круга с радиусом" + "  " + circle.radius + "=  " + circle.area());
+        System.out.println("Длина окружности с радиусом" + "  " + circle.radius + "=  " + circle.circumference());
     }
 
     double area() {
