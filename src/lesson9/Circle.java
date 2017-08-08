@@ -8,9 +8,6 @@ public class Circle {
     private double area, circumference;
     public static final double PI = Math.PI;
 
-    public Circle() {
-    }
-
     public void setRadius(double radius) {
         this.radius = radius;
     }
@@ -60,11 +57,11 @@ public class Circle {
         System.out.println("Длина окружности с радиусом" + "  " + circle.radius + "=  " + circle.circumference());
     }
 
-    double area() {
+    public double area() {
         return area = PI * radius * radius;
     }
 
-    double circumference() {
+    public double circumference() {
         return circumference = PI * 2 * radius;
     }
 }
