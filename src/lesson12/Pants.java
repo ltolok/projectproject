@@ -7,14 +7,14 @@ public class Pants extends Clothing implements MensClothing, WomensClothing {
     }
 
     public void clotheaMan() {
-        clotheprint();
+        clothPrint();
     }
 
     public void clotheaWomen() {
-        clotheprint();
+        clothPrint();
     }
 
-    public void clotheprint() {
+    public void clothPrint() {
         System.out.println(toString());
     }
 }
