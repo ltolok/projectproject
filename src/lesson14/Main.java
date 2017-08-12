@@ -7,8 +7,6 @@ import java.util.ResourceBundle;
 public class Main {
     public static void main(String[] args) throws UnsupportedEncodingException {
         printInfo("", "");
-
-        // printInfo("US", "EN");
         printInfo("ru", "RU");
     }
 
