@@ -1,11 +1,22 @@
 package lesson13;
 
+import java.io.UnsupportedEncodingException;
+import java.util.Date;
+
 public class Employee {
     private String fullname;
     private double salary;
+    private static Date salaryDate;
+
+    public static Date getSalaryDate() {
+        return salaryDate;
+    }
+
+    public static void setSalaryDate(Date salaryDate) {
+        Employee.salaryDate = salaryDate;
+    }
 
     @Override
-
     public String toString() {
         return "Employee{" +
                 "fullname='" + fullname + '\'' +
@@ -17,9 +28,7 @@ public class Employee {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
         Employee employee = (Employee) o;
-
         if (Double.compare(employee.salary, salary) != 0) return false;
         return fullname != null ? fullname.equals(employee.fullname) : employee.fullname == null;
     }
@@ -47,11 +56,10 @@ public class Employee {
     }
 
     public void setSalary(double salary) {
-
         this.salary = salary;
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws UnsupportedEncodingException {
         Employee employee[] = new Employee[4];
         employee[0] = new Employee();
         employee[0].setFullname("Иванов Иван Иванович");
@@ -65,7 +73,10 @@ public class Employee {
         employee[3] = new Employee();
         employee[3].setFullname("Панина Лидия Михайловна");
         employee[3].setSalary(5300.00);
-        Report.generateReport(employee);
+        Date date = new Date();
+        date.getTime();
+        setSalaryDate(date);
+        FullReport.generateFullReport(employee, "", "");
+        FullReport.generateFullReport(employee, "ru", "RU");
     }
-
 }
