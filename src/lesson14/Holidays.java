@@ -14,13 +14,13 @@ public class Holidays {
         GregorianCalendar dayVictory = new GregorianCalendar(2017, 04, 9);
         GregorianCalendar constitutionDay = new GregorianCalendar(2017, 05, 28);
         GregorianCalendar independenceDay = new GregorianCalendar(2017, 07, 24);
-        System.out.println("         Календарь праздников на 2017 год");
-        System.out.println("Новый год                                  " + format1.format(newYear.getTime()));
-        System.out.println("Международный женский день 8 Марта         " + format1.format(internationalWomenDay.getTime()));
-        System.out.println("День международной солидарности трудящихся " + format1.format(solidarityDay.getTime()));
-        System.out.println("День победы                                " + format1.format(dayVictory.getTime()));
-        System.out.println("День конституции                           " + format1.format(constitutionDay.getTime()));
-        System.out.println("День независимости                         " + format1.format(independenceDay.getTime()));
+        System.out.printf("\t\tКалендарь праздников на 2017 год%n");
+        System.out.printf("Новый год%42s%n", format1.format(newYear.getTime()));
+        System.out.printf("Международный женский день 8 Марта%17s%n", format1.format(internationalWomenDay.getTime()));
+        System.out.printf("День международной солидарности трудящихся %1s%n", format1.format(solidarityDay.getTime()));
+        System.out.printf("День победы%40s%n", format1.format(dayVictory.getTime()));
+        System.out.printf("День конституции%35s%n", format1.format(constitutionDay.getTime()));
+        System.out.printf("День независимости%33s%n", format1.format(independenceDay.getTime()));
     }
 }
 
