@@ -3,7 +3,7 @@ package lesson14;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Regxp3 {
+public class Regexp3 {
     public static String strMinLengh;
 
     public static void main(String[] args) {

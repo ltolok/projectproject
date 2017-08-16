@@ -3,7 +3,7 @@ package lesson14;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Regxp4 {
+public class Regexp4 {
     static int k = 0;
 
     public static void main(String[] args) {
