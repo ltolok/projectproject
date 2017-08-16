@@ -8,7 +8,7 @@ public class Regexp3 {
 
     public static void main(String[] args) {
         String s = "Допустимые идентификаторы: MinTemp, sum, x4, $test, my_number.";
-        String regex = "[^:,;,;.,$,_,\\s]+";
+        String regex = "[^:;,.$\\s]+";
         int minLength = 999;
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(s);
