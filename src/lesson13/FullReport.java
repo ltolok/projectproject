@@ -19,7 +19,7 @@ public class FullReport {
             System.out.println(value);
         }
         DateFormat format1 = new SimpleDateFormat("dd.MM.yy");
-        System.out.println("    Платежная ведомость от  " + format1.format(Employee.getSalaryDate()));
+        System.out.printf("\t\t Платежная ведомость от  ", format1.format(Employee.getSalaryDate()));
         System.out.printf("" + "№ Фамилия Имя Отчество             Cумма    ");
         for (Employee employee1 : employee) {
             System.out.printf("%n%d  %-30s%10.2f", Arrays.asList(employee).indexOf(employee1) + 1, employee1.getFullname(), employee1.getSalary());
