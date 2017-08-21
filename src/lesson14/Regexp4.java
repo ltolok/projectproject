@@ -6,8 +6,8 @@ import java.util.regex.Pattern;
 public class Regexp4 {
     public static void main(String[] args) {
         int k = 0;
-        String s = "Допустимые идентификаторы: MinTemp, sum, x, $test, my_number.";
-        String regex = "[A-z]+|\\w";
+        String s = "Допустимые идентификаторы: MinTemp, sum, x4, $test, my_number.";
+        String regex = "\\w+";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(s);
         while (matcher.find()) {

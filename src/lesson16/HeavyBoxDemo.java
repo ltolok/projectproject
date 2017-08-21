@@ -11,7 +11,6 @@ public class HeavyBoxDemo {
         arrayList.add(heavyBox);
         for (HeavyBox hb : arrayList) {
             System.out.println(hb.weight);
-
         }
         System.out.println(arrayList.size());
     }

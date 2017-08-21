@@ -5,26 +5,38 @@ import java.util.regex.Pattern;
 
 public class Regexp3 {
     public static void main(String[] args) {
-        String s = "Допустимые идентификаторы: MinTemp, sum, xx4, $test, my_number.";
-        String regex = "[^:;,.$\\s]+";
+        String s = "Допустимые идентификаторы: MinTemp, sum, x4xx4, $test, my_number.";
+        String regex = "\\w+";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(s);
-        int minLength = 999;
-        String strMinLength= new String();
+        int minLength = 100;
+        String strMinLength = "";
         while (matcher.find()) {
-            String str = matcher.group();
-            if (minLength >= str.length()) {
-                strMinLength = str;
-                minLength = str.length();
-                char c[] = str.toCharArray();
-                for (int i = 0; i < minLength - 1; i++) {
-                    if (c[i] == c[i + 1]) {
-                        minLength--;
+            if (matcher.group().length() < minLength) {
+                minLength = matcher.group().length();
+                strMinLength = matcher.group();
+            }
+            int length = matcher.group().length();
+            char c[] = matcher.group().toCharArray();
+            char c1[] = new char[length];
+            for (int i = 0; i < matcher.group().length(); i++) {
+                for (int j = 0; j < matcher.group().length(); j++) {
+                    if (c1[j] == c[i]) {
+                        length--;
+                        break;
+                    } else if (c1[j] == 0) {
+                        c1[j] = c[i];
+                        break;
                     }
                 }
             }
+            if (length < minLength) {
+                minLength = length;
+                strMinLength = matcher.group();
+            }
         }
         System.out.printf("В строке  \"%s\" \n", s);
-        System.out.printf("первое слово, в котором число различных символов минимально (%s) это %s", minLength, strMinLength);
+        System.out.printf("первое слово, в котором число различных символов минимально (%s) это %s\n", minLength, strMinLength);
+
     }
 }

@@ -5,8 +5,8 @@ import java.util.regex.Pattern;
 
 public class Palindrome {
     public static void main(String[] args) {
-        String s = "Если есть хвосты по дз, начните с 1 не сданного задания. 123 324 111 4554";
-        String regex = "[0-9]+\\d";
+        String s = "Если есть хвосты по дз, начните с 1-го несданного задания. 123 324 111 4554";
+        String regex = "\\d+";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(s);
         System.out.println("В строке \"" + s + "\"");

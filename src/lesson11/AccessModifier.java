@@ -12,6 +12,7 @@ public class AccessModifier {
         m1(s3);
         m1(s4);
     }
+
     public void m1(String s) {
         System.out.println(s);
     }

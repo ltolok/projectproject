@@ -3,7 +3,7 @@ package lesson11;
 public class Drum implements Tool {
     private int size;
 
-    Drum(int s) {
+    public Drum(int s) {
         size = s;
     }
 

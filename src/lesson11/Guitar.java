@@ -3,7 +3,7 @@ package lesson11;
 public class Guitar implements Tool {
     private int amountTurbine;
 
-    Guitar(int aT) {
+    public Guitar(int aT) {
         amountTurbine = aT;
     }
 

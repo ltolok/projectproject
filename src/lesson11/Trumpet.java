@@ -3,7 +3,7 @@ package lesson11;
 public class Trumpet implements Tool {
     private int diameter;
 
-    Trumpet(int d) {
+    public Trumpet(int d) {
         diameter = d;
     }
 
