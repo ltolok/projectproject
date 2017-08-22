@@ -1,10 +1,11 @@
 package lesson11;
 
 public class Modifier2 {
-    public void main(String s[]) {
-       //AccessModifier.m1(s1);
-       // AccessModifier.m1(AccessModifier.s2);
-       // AccessModifier.m1(AccessModifier.s3);
-       // AccessModifier.m1(AccessModifier.s4);
+    public static void main(String s[]) {
+        //new AccessModifier().m1(new AccessModifier().s1);
+        new AccessModifier().m1(new AccessModifier().s2);
+        new AccessModifier().m1(new AccessModifier().s3);
+        new AccessModifier().m1(new AccessModifier().s4);
     }
 }
+

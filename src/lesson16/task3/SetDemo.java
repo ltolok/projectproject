@@ -20,17 +20,30 @@ public class SetDemo {
         capitalCities.add(new City("London"));
         capitalCities.add(new City("Paris"));
         capitalCities.add(new City("Warsaw"));
-        System.out.println(cities);
-        System.out.println(capitalCities);
+        System.out.println("Даны два множества:");
+        printSet(cities);
+        printSet(capitalCities);
+        System.out.println("Оъединение множеств:");
         Set allcities = union(cities, capitalCities);
-        System.out.println(allcities);
-
+        printSet(allcities);
+        Set interSection = intersect(cities, capitalCities);
+        System.out.println("Пересечение множеств:");
+        printSet(interSection);
     }
 
     public static Set union(Set set1, Set set2) {
-        Set<Object> result = new HashSet<Object>();
-        result.addAll(set1);
-        result.addAll(set2);
-        return result;
+        Set<Object> allSet = new HashSet();
+        allSet.addAll(set1);
+        allSet.addAll(set2);
+        return allSet;
+    }
+
+    public static Set intersect(Set set1, Set set2) {
+        set1.retainAll(set2);
+        return set1;
+    }
+
+    static void printSet(Set set) {
+        System.out.println(set);
     }
 }

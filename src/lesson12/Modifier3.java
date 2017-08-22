@@ -3,10 +3,10 @@ package lesson12;
 import lesson11.AccessModifier;
 
 public class Modifier3 extends AccessModifier {
-    public  void main(String s[]) {
-       // m1(s1);
-      //  m1(s2);
-        m1(s3);
-        m1(s4);
+    public static void main(String[] args) {
+        //new Modifier3().m1(new AccessModifier().s1);
+        //new Modifier3().m1(new AccessModifier().s2);
+        //new Modifier3().m1(new AccessModifier().s3);
+        new Modifier3().m1(new AccessModifier().s4);
     }
 }
