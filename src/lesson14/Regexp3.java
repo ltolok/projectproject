@@ -1,7 +1,7 @@
 package lesson14;
 
-        import java.util.regex.Matcher;
-        import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Regexp3 {
     public static void main(String[] args) {
@@ -16,7 +16,7 @@ public class Regexp3 {
                 minLength = matcher.group().length();
                 strMinLength = matcher.group();
             }
-            int length = new Regexp3().numberChar(matcher.group());
+            int length = numberChar(matcher.group());
             if (length < minLength) {
                 minLength = length;
                 strMinLength = matcher.group();
@@ -26,7 +26,7 @@ public class Regexp3 {
         System.out.printf("первое слово, в котором число различных символов минимально (%s) это %s\n", minLength, strMinLength);
     }
 
-    int numberChar(String s) {
+    public static int numberChar(String s) {
         int length = s.length();
         char c[] = s.toCharArray();
         char c1[] = new char[length];
