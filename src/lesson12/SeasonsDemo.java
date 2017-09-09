@@ -8,7 +8,6 @@ public class SeasonsDemo {
             System.out.print(s);
             System.out.println("  " + s.getTemperatire());
             System.out.println("  " + s.getDescription());
-
         }
         Seasons favoritseason = Seasons.SPRING;
         System.out.println("Переменная Seasons содержит     " + Seasons.SPRING);

@@ -6,18 +6,13 @@ public enum Seasons {
             return "Теплое время время года";
         }
     }, AUTUMN(7);
-
     Seasons(int temperature) {
         this.temperatire = temperature;
     }
-
     private int temperatire;
-
     public int getTemperatire() {
         return temperatire;
-
     }
-
     public String getDescription() {
         return "Холодное время года";
     }
