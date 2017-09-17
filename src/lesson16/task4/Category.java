@@ -3,15 +3,42 @@ package lesson16.task4;
 import java.util.*;
 
 public class Category {
-    private String nameCategory;
+    private String name;
     private SortedSet<Product> products;
 
-    public String getNameCategory() {
-        return nameCategory;
+    @Override
+    public String toString() {
+        return "Category{" +
+                "name='" + name + '\'' +
+                ", products=" + products +
+                '}';
     }
 
-    public void setNameCategory(String nameCategory) {
-        this.nameCategory = nameCategory;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Category category = (Category) o;
+
+        if (name != null ? !name.equals(category.name) : category.name != null) return false;
+        return products != null ? products.equals(category.products) : category.products == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = name != null ? name.hashCode() : 0;
+        result = 31 * result + (products != null ? products.hashCode() : 0);
+        return result;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+
+        return name;
     }
 
     public void setProducts(SortedSet<Product> products) {
@@ -25,7 +52,7 @@ public class Category {
 
     public static void main(String[] args) {
         Category category1 = new Category();
-        category1.setNameCategory("clothes");
+        category1.setName("clothes");
         category1.setProducts(new TreeSet<>(new SortedByName()));
         category1.products.add(new Product("shirt", 299, 1));
         category1.products.add(new Product("pants", 399, 2));
@@ -33,7 +60,7 @@ public class Category {
         category1.printСatalog(category1.products);
 
         Category category2 = new Category();
-        category2.setNameCategory("footwear");
+        category2.setName("footwear");
         category2.setProducts(new TreeSet<>(new Comparator<Product>() {
             @Override
             public int compare(Product o1, Product o2) {
@@ -54,19 +81,13 @@ public class Category {
         category2.printСatalog(category2.products);
 
         Category category3 = new Category();
-        category3.setNameCategory("accessories");
+        category3.setName("accessories");
         category3.setProducts(new TreeSet<>(new Comparator<Product>() {
             @Override
             public int compare(Product o1, Product o2) {
-                double rating1 = o1.getRating();
-                double rating2 = o2.getRating();
-                if (rating1 > rating2) {
-                    return 1;
-                } else if (rating1 < rating2) {
-                    return -1;
-                } else {
-                    return 0;
-                }
+                int rating1 = o1.getRating();
+                int rating2 = o2.getRating();
+                return (rating1 - rating2);
             }
         }));
         category3.products.add(new Product("belt", 400, 3));
@@ -76,10 +97,10 @@ public class Category {
     }
 
     public void printСatalog(SortedSet<Product> products) {
-        for (Product i : products) {
-            System.out.println("Name: " + i.getName() +
-                    " price: " + i.getPrice() +
-                    " rating: " + i.getRating());
+        for (Product product : products) {
+            System.out.println("Name: " + product.getName() +
+                    " price: " + product.getPrice() +
+                    " rating: " + product.getRating());
         }
         System.out.println();
     }
