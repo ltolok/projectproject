@@ -66,13 +66,7 @@ public class Category {
             public int compare(Product o1, Product o2) {
                 double price1 = o1.getPrice();
                 double price2 = o2.getPrice();
-                if (price1 > price2) {
-                    return 1;
-                } else if (price1 < price2) {
-                    return -1;
-                } else {
-                    return 0;
-                }
+                return (int) (price1 - price2);
             }
         }));
         category2.products.add(new Product("shoes", 549, 1));
