@@ -12,7 +12,7 @@ public class Repeat {
         Matcher matcher = pattern.matcher(s);
         Set<Integer> s1 = new LinkedHashSet<>();
         while (matcher.find()) {
-            s1.add(new Integer(Integer.parseInt(matcher.group())));
+            s1.add(Integer.parseInt(matcher.group()));
         }
         System.out.println(s1);
     }
