@@ -1,5 +1,4 @@
-package lesson12;
-
+package lesson12.task1;
 
 public class SeasonsDemo {
     public static void main(String[] args) {
@@ -11,10 +10,10 @@ public class SeasonsDemo {
         }
         Seasons favoritseason = Seasons.SPRING;
         System.out.println("Переменная Seasons содержит     " + Seasons.SPRING);
-        printfavoritseason(favoritseason);
+        printSeason(favoritseason);
     }
 
-    static void printfavoritseason(Seasons seasons) {
+    static void printSeason(Seasons seasons) {
         switch (seasons) {
             case WINTER: {
                 System.out.println("Мое любимое время года зима");
