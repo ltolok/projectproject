@@ -5,15 +5,15 @@ public class SeasonsDemo {
         Seasons[] seasons = Seasons.values();
         for (Seasons s : seasons) {
             System.out.print(s);
-            System.out.println("  " + s.getTemperatire());
+            System.out.println("  " + s.getTemperature());
             System.out.println("  " + s.getDescription());
         }
-        Seasons favoritseason = Seasons.SPRING;
+        Seasons favoritSeason = Seasons.SPRING;
         System.out.println("Переменная Seasons содержит     " + Seasons.SPRING);
-        printSeason(favoritseason);
+        printFavoritSeason(favoritSeason);
     }
 
-    static void printSeason(Seasons seasons) {
+    static void printFavoritSeason(Seasons seasons) {
         switch (seasons) {
             case WINTER: {
                 System.out.println("Мое любимое время года зима");

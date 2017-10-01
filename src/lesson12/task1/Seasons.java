@@ -8,13 +8,13 @@ public enum Seasons {
     }, AUTUMN(7);
 
     Seasons(int temperature) {
-        this.temperatire = temperature;
+        this.temperature = temperature;
     }
 
-    private int temperatire;
+    private int temperature;
 
-    public int getTemperatire() {
-        return temperatire;
+    public int getTemperature() {
+        return temperature;
     }
 
     public String getDescription() {
