@@ -17,6 +17,7 @@ public class SeasonsDemo {
         switch (seasons) {
             case WINTER: {
                 System.out.println("Мое любимое время года зима");
+
                 break;
             }
             case SPRING: {

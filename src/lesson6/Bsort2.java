@@ -7,7 +7,7 @@ public class Bsort2 {
         array[1] = 1;
         array[2] = 2;
         array[3] = 3;
-        array[4] = 5;
+        array[4] = 0;
         array[5] = 4;
         sort2(array);
 
@@ -20,7 +20,7 @@ public class Bsort2 {
     static void sort2(int[] array) {
         for (int i = 0; i < array.length; i++) {
             boolean t = false;
-            for (int j = 1; j<array.length; j++){
+            for (int j = 1; j < array.length; j++) {
                 if (array[j - 1] < array[j]) {
                     int tmp = array[j - 1];
                     array[j - 1] = array[j];
