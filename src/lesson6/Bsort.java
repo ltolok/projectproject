@@ -1,6 +1,6 @@
 package lesson6;
 
-public class Bsort {
+public class Bsort{
     public static void main(String[] args) {
         int[] array = new int[6];
         array[0] = 0;
