@@ -17,12 +17,18 @@ public class Bouquet {
         quantity = quantity + k;
     }
 
-    public Bouquet(Flower[] flowers) {
+    public Bouquet(Flower[] f) {
+        Flower[] flowers = new Flower[f.length];
+        System.arraycopy(f, 0, flowers, 0, f.length);
         quantity = quantity + flowers.length;
-        for (int i = 0; i < flowers.length; i = i++) {
+        for (int i = 0; i < flowers.length; i++) {
             price = price + flowers[i].price();
         }
-        System.out.println("Цена букета из " + flowers.toString() + "  =  " + price);
+        System.out.println("Цена букета из : ");
+        for (Flower fq : flowers) {
+            System.out.println(fq);
+        }
+        System.out.println("= " + price);
     }
 
     public static void main(String[] args) {
