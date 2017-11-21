@@ -36,7 +36,7 @@ public class AccountingLibrary extends LibraryUser {
         System.out.println("Введите количество пользователей библиотеки: ");
         if (sc.hasNextInt()) {
             int k = sc.nextInt();
-            LibraryUser[] user = new LibraryUser[k];
+            AccountingLibrary[] user = new AccountingLibrary[k];
             for (int i = 0; i < k; i++) {
                 System.out.println("ФИО пользователя: " + (i + 1));
                 Scanner sc1 = new Scanner(System.in);
@@ -53,19 +53,21 @@ public class AccountingLibrary extends LibraryUser {
                 System.out.println("Телефон ");
                 Scanner sc5 = new Scanner(System.in);
                 String s5 = sc1.nextLine();
-                user[i] = new LibraryUser(s1, n, s3, s4, s5);
+                user[i] = new AccountingLibrary(s1, n, s3, s4, s5, 0, 0);
             }
             System.out.println("          Список читателей библиотеки:");
             System.out.println("          ФИО                № чит.билета   Факультет    Дата рождения     Телефон");
-
-            for (LibraryUser libraryUser : user) {
-                int j = 0;
+            int j = 0;
+            for (AccountingLibrary libraryUser : user) {
                 System.out.printf("%n%d  %-30s%-10s%-15s%-15s%-15s", ++j, libraryUser.getName(), libraryUser.getTicketNumber(), libraryUser.getFaculty(), libraryUser.getBirthday(), libraryUser.getPhone());
             }
             System.out.printf("%n");
-            user[0].takeBook();
-            user[0].returnBook();
-
+            user[0].takeBook(3);
+            user[0].takeBook("История Древнего мира", "История средних веков", "История Украины");
+            user[1].takeBook(new Book("Математический анализ", "Александров А.А."), new Book("Функциональный анализ", "Иванов А.А."));
+            user[0].returnBook(user[0].getNumberTook());
+            user[0].returnBook("История Древнего мира", "История средних веков", "История Украины");
+            user[1].returnBook(new Book("Математический анализ", "Александров А.А."), new Book("Функциональный анализ", "Иванов А.А."));
         } else {
             System.out.println("Вы ввели не целое число");
             return;
@@ -73,10 +75,49 @@ public class AccountingLibrary extends LibraryUser {
     }
 
     void takeBook(int k) {
+        this.setNumberTook(k);
         System.out.println(this.toString() + "   взял " + k + "   книг");
     }
 
+    void takeBook(String... book) {
+        System.out.println(this.toString() + "взял следующие книги:  ");
+        for (int i = 0; i < book.length; i++) {
+            System.out.println(i + 1 + ".  " + book[i]);
+        }
+        this.setNumberReturn(book.length);
+        System.out.println("Всего:  " + this.getNumberReturn());
+    }
+
+    void takeBook(Book... books) {
+        System.out.println(this.toString() + "взял следующие книги:  ");
+        for (int i = 0; i < books.length; i++) {
+            System.out.println(i + 1 + ".  " + books[i].toString());
+        }
+        this.setNumberTook(books.length);
+        System.out.println("Всего:  " + books.length);
+    }
+
     void returnBook(int k) {
-        System.out.println(this.toString() + "   вернул" + k + "   книг");
+        this.setNumberReturn(k);
+        System.out.println(
+                this.toString() + "   вернул " + k + "   книг");
+    }
+
+    void returnBook(String... book) {
+        System.out.println(this.toString() + "вернул следующие книги:  ");
+        for (int i = 0; i < book.length; i++) {
+            System.out.println(i + 1 + ".  " + book[i]);
+        }
+        this.setNumberReturn(book.length);
+        System.out.println("Всего:  " + this.getNumberReturn());
+    }
+
+    void returnBook(Book... books) {
+        System.out.println(this.toString() + "вернул следующие книги:  ");
+        for (int i = 0; i < books.length; i++) {
+            System.out.println(i + 1 + ".  " + books[i].toString());
+        }
+        this.setNumberReturn(books.length);
+        System.out.println("Всего:  " + this.getNumberReturn());
     }
 }

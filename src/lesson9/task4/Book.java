@@ -27,4 +27,12 @@ public class Book {
 
         return name;
     }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "name='" + name + '\'' +
+                ", author='" + author + '\'' +
+                '}';
+    }
 }

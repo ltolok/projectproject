@@ -72,9 +72,10 @@ public class LibraryUser {
     }
 
     public void takeBook() {
-      System.out.println(toString() + "взял книги в библиотеке");
+        System.out.println(toString() + "взял книги в библиотеке");
     }
 
-    public void returnBook() {System.out.println(toString() + "вернул книги в библиотеку");
-   }
+    public void returnBook() {
+        System.out.println(toString() + "вернул книги в библиотеку");
+    }
 }
