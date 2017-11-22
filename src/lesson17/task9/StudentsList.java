@@ -41,7 +41,6 @@ public class StudentsList {
             Student student = iterator.next();
             if (student.getCourse() == course) {
                 System.out.println(student.getName());
-                iterator.remove();
             }
         }
     }
