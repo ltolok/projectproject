@@ -1,49 +1,56 @@
 package lesson17.task10;
 
-import java.util.HashMap;
-import java.util.Map;
+
 
 public class Pet {
-    public String name;
-
-    public Pet(String name) {
-        this.name = name;
-    }
+    private String name;
+    private String adress;
 
     public void setName(String name) {
         this.name = name;
     }
 
-    public String getName() {
+    public Pet(String name, String adress) {
+        this.name = name;
+        this.adress = adress;
+    }
 
+    public String getName() {
         return name;
+    }
+
+    public String getAdress() {
+        return adress;
+    }
+
+    public void setAdress(String adress) {
+        this.adress = adress;
     }
 
     @Override
     public String toString() {
         return "Pet{" +
                 "name='" + name + '\'' +
+                ", adress='" + adress + '\'' +
                 '}';
     }
 
-    public static void main(String[] args) {
-        Map<String, Pet> map = new HashMap<>();
-        Pet map1 = new Cat("Murka");
-        Pet map2 = new Dog("Rex");
-        Pet map3 = new Parrot("Kesha");
-        map.put(map1.getName(), map1);
-        map.put(map2.getName(), map2);
-        map.put(map3.getName(), map3);
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
 
-        for (Pet pet : map.values()) {
-            System.out.println(pet.toString());
-        }
-        for (String key : map.keySet()) {
-            System.out.println(key);
-        }
-        for (Map.Entry entry : map.entrySet()) {
-            System.out.println(entry);
-        }
+        Pet pet = (Pet) o;
+
+        if (name != null ? !name.equals(pet.name) : pet.name != null) return false;
+        return adress != null ? adress.equals(pet.adress) : pet.adress == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = name != null ? name.hashCode() : 0;
+        result = 31 * result + (adress != null ? adress.hashCode() : 0);
+        return result;
     }
 }
 
