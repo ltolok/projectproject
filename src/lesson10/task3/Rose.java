@@ -7,17 +7,17 @@ public class Rose extends Flower {
 
     @Override
     public String toString() {
-        return "Rose{} " + super.toString();
+        return "Роза " + super.toString();
     }
 
     public static void main(String[] args) {
-        Flower rose1 = new Rose("Ecuador", 10);
+        Flower rose1 = new Rose("Эквадор", 10);
         rose1.price();
         System.out.println(rose1.price());
-        Flower rose2 = new Rose("Ecuador", 8);
+        Flower rose2 = new Rose("Эквадор", 8);
         rose2.price();
         System.out.println(rose2.price());
-        Flower rose3 = new Rose("Ecuador", 5);
+        Flower rose3 = new Rose("Эквадор", 5);
         rose3.price();
         System.out.println(rose3.price());
     }

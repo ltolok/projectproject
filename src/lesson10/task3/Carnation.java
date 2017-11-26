@@ -7,17 +7,17 @@ public class Carnation extends Flower {
 
     @Override
     public String toString() {
-        return "Carnation{} " + super.toString();
+        return "Гвоздика " + super.toString();
     }
 
     public static void main(String[] args) {
-        Flower carnation1 = new Carnation("Holland", 15);
+        Flower carnation1 = new Carnation("Голландия", 15);
         carnation1.price();
         System.out.println(carnation1.price());
-        Flower carnation2 = new Carnation("Holland", 10);
+        Flower carnation2 = new Carnation("Голландия", 10);
         carnation1.price();
         System.out.println(carnation2.price());
-        Flower carnation3 = new Carnation("Holland", 7);
+        Flower carnation3 = new Carnation("Голландия", 7);
         carnation1.price();
         System.out.println(carnation3.price());
     }

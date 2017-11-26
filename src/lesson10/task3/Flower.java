@@ -1,8 +1,8 @@
 package lesson10.task3;
 
 public abstract class Flower {
-    public String manufacturerCountry;
-    public int storageTerm;
+    private String manufacturerCountry;
+    private int storageTerm;
 
     public Flower(String manufacturerCountry, int storageTerm) {
         this.manufacturerCountry = manufacturerCountry;
@@ -11,10 +11,8 @@ public abstract class Flower {
 
     @Override
     public String toString() {
-        return "Flower{" +
-                "manufacturerCountry='" + manufacturerCountry + '\'' +
-                ", storageTerm=" + storageTerm +
-                '}';
+        return "(Цветок из " + manufacturerCountry +
+                " срок годности " + storageTerm+" дней)";
     }
 
     public void setManufacturerCountry(String manufacturerCountry) {

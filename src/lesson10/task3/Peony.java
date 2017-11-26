@@ -7,17 +7,17 @@ public class Peony extends Flower {
 
     @Override
     public String toString() {
-        return "Peony{} " + super.toString();
+        return "Пион " + super.toString();
     }
 
     public static void main(String[] args) {
-        Flower peony1 = new Peony("Ukraine", 7);
+        Flower peony1 = new Peony("Украина", 7);
         peony1.price();
         System.out.println(peony1.price());
-        Flower peony2 = new Peony("Ukraine", 6);
+        Flower peony2 = new Peony("Украина", 6);
         peony2.price();
         System.out.println(peony2.price());
-        Flower peony3 = new Peony("Ukraine", 5);
+        Flower peony3 = new Peony("Украина", 5);
         peony3.price();
         System.out.println(peony3.price());
     }

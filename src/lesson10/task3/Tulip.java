@@ -7,17 +7,17 @@ public class Tulip extends Flower {
 
     @Override
     public String toString() {
-        return "Tulip{} " + super.toString();
+        return "Тюльпан " + super.toString();
     }
 
     public static void main(String[] args) {
-        Flower tulip1 = new Tulip("Poland", 7);
+        Flower tulip1 = new Tulip("Польша", 7);
         tulip1.price();
         System.out.println(tulip1.price());
-        Flower tulip2 = new Tulip("Poland", 5);
+        Flower tulip2 = new Tulip("Польша", 5);
         tulip1.price();
         System.out.println(tulip2.price());
-        Flower tulip3 = new Tulip("Poland", 3);
+        Flower tulip3 = new Tulip("Польша", 3);
         tulip1.price();
         System.out.println(tulip2.price());
     }

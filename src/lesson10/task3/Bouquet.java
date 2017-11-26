@@ -1,27 +1,83 @@
 package lesson10.task3;
 
+
+import java.util.Arrays;
+
 public class Bouquet {
-    static int quantity = 0;
-    private double price = 0;
+    private static int quantity = 0;
+    private Flower flower;
+    private int number;
+    private Flower[] flowers = new Flower[5];
 
-    @Override
-    public String toString() {
-        return "Bouquet{" +
-                "price=" + price +
-                '}';
-    }
-
-    public Bouquet(Flower flower, int k) {
-        price = flower.price() * k;
-        System.out.println("Цена букета из " + k + "  " + flower.toString() + "  =  " + price);
-        quantity = quantity + k;
+    public Bouquet(Flower flower, int number) {
+        this.flower = flower;
+        this.number = number;
     }
 
     public Bouquet(Flower[] f) {
-        Flower[] flowers = new Flower[f.length];
-        System.arraycopy(f, 0, flowers, 0, f.length);
-        quantity = quantity + flowers.length;
-        for (int i = 0; i < flowers.length; i++) {
+        this.number = f.length;
+        System.arraycopy(f, 0, this.flowers, 0, this.number);
+
+    }
+
+    public static int getQuantity() {
+        return quantity;
+    }
+
+    public Flower getFlower() {
+        return flower;
+    }
+
+    public int getNumber() {
+        return number;
+    }
+
+    public Flower[] getFlowers() {
+        return flowers;
+    }
+
+    public static void setQuantity(int quantity) {
+        Bouquet.quantity = quantity;
+    }
+
+    public void setFlower(Flower flower) {
+        this.flower = flower;
+    }
+
+    public void setNumber(int number) {
+        this.number = number;
+    }
+
+    public void setFlowers(Flower[] flowers) {
+        this.flowers = flowers;
+    }
+
+    public static void main(String[] args) {
+        Bouquet[] bouquets = new Bouquet[3];
+        bouquets[0] = new Bouquet(new Rose("Эквадор", 10), 7);
+        bouquets[0].bouquetPrice();
+        bouquets[1] = new Bouquet(new Carnation("Голландия", 15), 9);
+        bouquets[1].bouquetPrice();
+        Flower[] flowers = new Flower[5];
+        flowers[0] = new Peony("Украина", 7);
+        flowers[1] = new Peony("Украина", 7);
+        flowers[2] = new Peony("Украина", 7);
+        flowers[3] = new Tulip("Польша", 7);
+        flowers[4] = new Tulip("Польша", 7);
+        bouquets[2] = new Bouquet(flowers);
+        bouquets[2].bouquetPrice2();
+        System.out.println("Всего продано " + quantity + "  цветов");
+    }
+
+    public void bouquetPrice() {
+        System.out.println("Цена букета из" + flower.toString() + "  " + "  =  " + flower.price() * this.number);
+        quantity = quantity + this.number;
+    }
+
+    public void bouquetPrice2() {
+        quantity = quantity + this.number;
+        double price = 0;
+        for (int i = 0; i < this.number; i++) {
             price = price + flowers[i].price();
         }
         System.out.println("Цена букета из : ");
@@ -29,19 +85,5 @@ public class Bouquet {
             System.out.println(fq);
         }
         System.out.println("= " + price);
-    }
-
-    public static void main(String[] args) {
-        Bouquet[] bouquets = new Bouquet[3];
-        bouquets[0] = new Bouquet(new Rose("Ecuador", 10), 7);
-        bouquets[1] = new Bouquet(new Carnation("Holland", 15), 9);
-        Flower[] flowers = new Flower[5];
-        flowers[0] = new Peony("Ukraine", 7);
-        flowers[1] = new Peony("Ukraine", 7);
-        flowers[2] = new Peony("Ukraine", 7);
-        flowers[3] = new Tulip("Poland", 7);
-        flowers[4] = new Tulip("Poland", 7);
-        bouquets[2] = new Bouquet(flowers);
-        System.out.println("Всего продано " + quantity + "  цветов");
     }
 }
