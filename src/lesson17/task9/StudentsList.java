@@ -3,6 +3,7 @@ package lesson17.task9;
 import java.util.*;
 
 public class StudentsList {
+
     public static void main(String[] args) {
         List<Student> studentList = new ArrayList<>();
         studentList.add(new Student("Морозов Иван", 101, 1, new int[]{5, 5, 5, 5, 5, 5, 5, 5, 5, 5}));
@@ -17,21 +18,23 @@ public class StudentsList {
         Student student5 = new Student("Гончарова Татьяна", 301, 3, new int[]{5, 5, 4, 4, 5, 5, 3, 3, 3, 3});
         studentList.add(student5);
         for (Student student : studentList) {
-            double average = 0;
-            for (int i = 0; i < 10; i++) {
-                average = average + student.getEvaluated()[i];
-            }
-            average = average / 10;
-            System.out.print("Средний балл студента  " + student.getName() + "  = " + average);
-            if (average >= 3) {
+            student.average(student, 10);
+            System.out.println(student);
+            System.out.print("Средний балл студента  " + student.getName() + "  = " + student.average(student, 10));
+            if (student.average(student, 10) >= 3) {
+                student.setCourse(student.getCourse() + 1);
                 System.out.println(" (Переводится на следующий курс)");
+                System.out.println();
             } else {
+                student.setCourse(0);
                 System.out.println(" (Отчисляется)");
+                System.out.println();
             }
         }
         printStudents(studentList, 1);
         printStudents(studentList, 2);
         printStudents(studentList, 3);
+        printStudents(studentList, 4);
     }
 
     static void printStudents(List students, int course) {

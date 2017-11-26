@@ -17,6 +17,14 @@ public class Toy {
         System.out.println("In constructor with one parameter");
     }
 
+    @Override
+    public String toString() {
+        return "Toy{" +
+                "name='" + name + '\'' +
+                ", сost=" + сost +
+                '}';
+    }
+
     public Toy() {
         System.out.println("In default constructor");
     }

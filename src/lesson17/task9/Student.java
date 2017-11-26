@@ -1,5 +1,7 @@
 package lesson17.task9;
 
+import java.util.Arrays;
+
 public class Student {
     private String name;
     private int group;
@@ -11,6 +13,36 @@ public class Student {
         this.group = group;
         this.course = course;
         System.arraycopy(evaluated, 0, this.evaluated, 0, evaluated.length);
+    }
+
+    @Override
+    public String toString() {
+        return "Cтудент  " + name +
+                ", группа " + group +
+                ", курс =" + course +
+                ", оценки =" + Arrays.toString(evaluated);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Student student = (Student) o;
+
+        if (group != student.group) return false;
+        if (course != student.course) return false;
+        if (name != null ? !name.equals(student.name) : student.name != null) return false;
+        return Arrays.equals(evaluated, student.evaluated);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = name != null ? name.hashCode() : 0;
+        result = 31 * result + group;
+        result = 31 * result + course;
+        result = 31 * result + Arrays.hashCode(evaluated);
+        return result;
     }
 
     public int[] getEvaluated() {
@@ -44,5 +76,13 @@ public class Student {
 
     public void setEvaluated(int[] evaluated) {
         this.evaluated = evaluated;
+    }
+
+    public double average(Student student, int n) {
+        double average = 0;
+        for (int i = 0; i < n; i++) {
+            average = average + student.getEvaluated()[i];
+        }
+        return average = average / n;
     }
 }
