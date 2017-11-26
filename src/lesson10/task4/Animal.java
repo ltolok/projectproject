@@ -27,16 +27,12 @@ public class Animal {
 
     @Override
     public String toString() {
-        return "name='" + name + '\'' +
-                '}';
+        return "по имени  " + name;
     }
-
-    public void makeNoise() {
+    public void makeNoise() {System.out.println("Животное издает характерный звук");
     }
-
-    public void eat() {
+    public void eat() {System.out.println("Животное ест");
     }
-
-    void sleep() {
+    public void sleep() {System.out.println("Животное спит");
     }
 }

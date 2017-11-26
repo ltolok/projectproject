@@ -9,7 +9,7 @@ public class Cat extends Animal {
 
     @Override
     public String toString() {
-        return "Cat{} " + super.toString();
+        return "кот " + super.toString();
     }
 
     public void makeNoise() {
@@ -21,6 +21,6 @@ public class Cat extends Animal {
     }
 
     public void sleep() {
-        System.out.println("Кот спит на диване в" + getLocation());
+        System.out.println("Кот спит на диване в " + getLocation());
     }
 }

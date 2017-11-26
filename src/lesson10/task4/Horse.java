@@ -5,7 +5,7 @@ public class Horse extends Animal {
 
     @Override
     public String toString() {
-        return "Horse{} " + super.toString();
+        return "лошадь " + super.toString();
     }
 
     public Horse(String food, String location, String name) {

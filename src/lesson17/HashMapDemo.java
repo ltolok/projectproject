@@ -12,13 +12,24 @@ public class HashMapDemo {
         map.put(toy1.getName(), toy1);
         map.put(toy2.getName(), toy2);
         map.put(toy3.getName(), toy3);
+        mapValues(map);
+        mapKeySet(map);
+        mapEntrySet(map);
+    }
 
+    static void mapValues(Map<String, Toy> map) {
         for (Toy toy : map.values()) {
             System.out.println(toy);
         }
+    }
+
+    static void mapKeySet(Map<String, Toy> map) {
         for (String key : map.keySet()) {
-            System.out.println(key);
+            System.out.println(key + "  " + map.get(key));
         }
+    }
+
+    static void mapEntrySet(Map<String, Toy> map) {
         for (Map.Entry entry : map.entrySet()) {
             System.out.println(entry);
         }

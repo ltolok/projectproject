@@ -11,8 +11,8 @@ public class Vet {
         }
     }
 
-    static void treatAnimal(Animal animal) {
-        System.out.println("На приеме у ветеринара   " + animal.toString());
+    public static void treatAnimal(Animal animal) {
+        System.out.println("На приеме у ветеринара   " + animal);
         animal.makeNoise();
         animal.eat();
         animal.sleep();
