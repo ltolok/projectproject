@@ -29,10 +29,36 @@ public class Animal {
     public String toString() {
         return "по имени  " + name;
     }
-    public void makeNoise() {System.out.println("Животное издает характерный звук");
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Animal animal = (Animal) o;
+
+        if (food != null ? !food.equals(animal.food) : animal.food != null) return false;
+        if (location != null ? !location.equals(animal.location) : animal.location != null) return false;
+        return name != null ? name.equals(animal.name) : animal.name == null;
     }
-    public void eat() {System.out.println("Животное ест");
+
+    @Override
+    public int hashCode() {
+        int result = food != null ? food.hashCode() : 0;
+        result = 31 * result + (location != null ? location.hashCode() : 0);
+        result = 31 * result + (name != null ? name.hashCode() : 0);
+        return result;
     }
-    public void sleep() {System.out.println("Животное спит");
+
+    public void makeNoise() {
+        System.out.println("Животное издает характерный звук");
+    }
+
+    public void eat() {
+        System.out.println("Животное ест");
+    }
+
+    public void sleep() {
+        System.out.println("Животное спит");
     }
 }
