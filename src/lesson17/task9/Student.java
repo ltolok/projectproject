@@ -78,11 +78,12 @@ public class Student {
         this.evaluated = evaluated;
     }
 
-    public double average(Student student, int n) {
+    public double average(Student student) {
         double average = 0;
+        int n = this.getEvaluated().length;
         for (int i = 0; i < n; i++) {
-            average = average + student.getEvaluated()[i];
+            average = average + this.getEvaluated()[i];
         }
-        return average = average / n;
+        return average / n;
     }
 }

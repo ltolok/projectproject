@@ -1,14 +1,8 @@
 package lesson17.task10;
 
-
-
 public class Pet {
     private String name;
     private String adress;
-
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public Pet(String name, String adress) {
         this.name = name;
@@ -17,6 +11,10 @@ public class Pet {
 
     public String getName() {
         return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getAdress() {

@@ -18,10 +18,9 @@ public class StudentsList {
         Student student5 = new Student("Гончарова Татьяна", 301, 3, new int[]{5, 5, 4, 4, 5, 5, 3, 3, 3, 3});
         studentList.add(student5);
         for (Student student : studentList) {
-            student.average(student, 10);
             System.out.println(student);
-            System.out.print("Средний балл студента  " + student.getName() + "  = " + student.average(student, 10));
-            if (student.average(student, 10) >= 3) {
+            System.out.print("Средний балл студента  " + student.getName() + "  = " + student.average(student));
+            if (student.average(student) >= 3) {
                 student.setCourse(student.getCourse() + 1);
                 System.out.println(" (Переводится на следующий курс)");
                 System.out.println();
@@ -37,7 +36,7 @@ public class StudentsList {
         printStudents(studentList, 4);
     }
 
-    static void printStudents(List students, int course) {
+    public static void printStudents(List<Student> students, int course) {
         Iterator<Student> iterator = students.iterator();
         System.out.println("Список студентов " + course + " курса:");
         while (iterator.hasNext()) {
