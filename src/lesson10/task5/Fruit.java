@@ -37,12 +37,11 @@ public abstract class Fruit {
         return (int) (temp ^ (temp >>> 32));
     }
 
-    final void printManufacturerInfo() {
+    public final void printManufacturerInfo() {
         System.out.println("Made in Ukraine");
     }
 
     public double fruitCosts() {
-        double costs = 0;
-        return costs;
+        return 0;
     }
 }
