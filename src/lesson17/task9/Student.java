@@ -78,7 +78,7 @@ public class Student {
         this.evaluated = evaluated;
     }
 
-    public double average(Student student) {
+    public double average() {
         double average = 0;
         int n = this.getEvaluated().length;
         for (int i = 0; i < n; i++) {
