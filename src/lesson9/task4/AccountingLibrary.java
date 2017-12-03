@@ -39,20 +39,15 @@ public class AccountingLibrary extends LibraryUser {
             AccountingLibrary[] user = new AccountingLibrary[k];
             for (int i = 0; i < k; i++) {
                 System.out.println("ФИО пользователя: " + (i + 1));
-                Scanner sc1 = new Scanner(System.in);
-                String s1 = sc1.nextLine();
+                String s1 = new Scanner(System.in).nextLine();
                 System.out.println("Номер читательского билета ");
-                Scanner sc2 = new Scanner(System.in);
-                int n = sc2.nextInt();
+                int n = new Scanner(System.in).nextInt();
                 System.out.println("Факультет ");
-                Scanner sc3 = new Scanner(System.in);
-                String s3 = sc1.nextLine();
+                String s3 = new Scanner(System.in).nextLine();
                 System.out.println("Дата рождения ");
-                Scanner sc4 = new Scanner(System.in);
-                String s4 = sc1.nextLine();
+                String s4 = new Scanner(System.in).nextLine();
                 System.out.println("Телефон ");
-                Scanner sc5 = new Scanner(System.in);
-                String s5 = sc1.nextLine();
+                String s5 = new Scanner(System.in).nextLine();
                 user[i] = new AccountingLibrary(s1, n, s3, s4, s5, 0, 0);
             }
             System.out.println("          Список читателей библиотеки:");
@@ -74,13 +69,13 @@ public class AccountingLibrary extends LibraryUser {
         }
     }
 
-    void takeBook(int k) {
+    public void takeBook(int k) {
         this.setNumberTook(k);
-        System.out.println(this.toString() + "   взял " + k + "   книг");
+        System.out.println(this.getName() + "   взял " + k + "   книг");
     }
 
-    void takeBook(String... book) {
-        System.out.println(this.toString() + "взял следующие книги:  ");
+    public void takeBook(String... book) {
+        System.out.println(this.getName() + " взял следующие книги:  ");
         for (int i = 0; i < book.length; i++) {
             System.out.println(i + 1 + ".  " + book[i]);
         }
@@ -88,8 +83,8 @@ public class AccountingLibrary extends LibraryUser {
         System.out.println("Всего:  " + this.getNumberReturn());
     }
 
-    void takeBook(Book... books) {
-        System.out.println(this.toString() + "взял следующие книги:  ");
+    public void takeBook(Book... books) {
+        System.out.println(this.getName() + " взял следующие книги:  ");
         for (int i = 0; i < books.length; i++) {
             System.out.println(i + 1 + ".  " + books[i].toString());
         }
@@ -97,14 +92,14 @@ public class AccountingLibrary extends LibraryUser {
         System.out.println("Всего:  " + books.length);
     }
 
-    void returnBook(int k) {
+    public void returnBook(int k) {
         this.setNumberReturn(k);
         System.out.println(
-                this.toString() + "   вернул " + k + "   книг");
+                this.getName() + "   вернул " + k + "   книг");
     }
 
-    void returnBook(String... book) {
-        System.out.println(this.toString() + "вернул следующие книги:  ");
+    public void returnBook(String... book) {
+        System.out.println(this.getName() + " вернул следующие книги:  ");
         for (int i = 0; i < book.length; i++) {
             System.out.println(i + 1 + ".  " + book[i]);
         }
@@ -112,10 +107,10 @@ public class AccountingLibrary extends LibraryUser {
         System.out.println("Всего:  " + this.getNumberReturn());
     }
 
-    void returnBook(Book... books) {
-        System.out.println(this.toString() + "вернул следующие книги:  ");
+    public void returnBook(Book... books) {
+        System.out.println(this.getName() + " вернул следующие книги:  ");
         for (int i = 0; i < books.length; i++) {
-            System.out.println(i + 1 + ".  " + books[i].toString());
+            System.out.println(i + 1 + ".  " + books[i]);
         }
         this.setNumberReturn(books.length);
         System.out.println("Всего:  " + this.getNumberReturn());
