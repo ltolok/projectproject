@@ -15,6 +15,24 @@ public abstract class Flower {
                 " срок годности " + storageTerm+" дней)";
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Flower flower = (Flower) o;
+
+        if (storageTerm != flower.storageTerm) return false;
+        return manufacturerCountry != null ? manufacturerCountry.equals(flower.manufacturerCountry) : flower.manufacturerCountry == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = manufacturerCountry != null ? manufacturerCountry.hashCode() : 0;
+        result = 31 * result + storageTerm;
+        return result;
+    }
+
     public void setManufacturerCountry(String manufacturerCountry) {
         this.manufacturerCountry = manufacturerCountry;
     }
