@@ -12,6 +12,11 @@ public class Pear extends Fruit {
         this.price = price;
     }
 
+    public double getPrice() {
+
+        return price;
+    }
+
     @Override
     public String toString() {
         return "Pear{" +
@@ -20,14 +25,9 @@ public class Pear extends Fruit {
                 "} " + super.toString();
     }
 
-    public double getPrice() {
-
-        return price;
-    }
-
     public double fruitCosts() {
         double fruitCosts = this.getWeight() * this.getPrice();
-        System.out.println("Груша (вес " + this.getWeight() + " цена " + getPrice()+" грн )" + "стоит  " + fruitCosts+" грн");
+        System.out.println("Груша (вес " + this.getWeight() + " цена " + getPrice() + " грн )" + "стоит  " + fruitCosts + " грн");
         printManufacturerInfo();
         return fruitCosts;
     }

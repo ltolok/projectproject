@@ -19,12 +19,11 @@ public class Apple extends Fruit {
 
     public double getPrice() {
         return price;
-
     }
 
     public double fruitCosts() {
         double fruitCosts = this.getWeight() * this.getPrice();
-        System.out.println("Яблоко (вес " + this.getWeight() + " цена " + getPrice()+" грн )" + "стоит  " + fruitCosts+" грн");;
+        System.out.println("Яблоко (вес " + this.getWeight() + " цена " + getPrice() + " грн )" + "стоит  " + fruitCosts + " грн");
         printManufacturerInfo();
         return fruitCosts;
     }

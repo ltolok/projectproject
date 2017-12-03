@@ -27,7 +27,7 @@ public class Apricot extends Fruit {
 
     public double fruitCosts() {
         double fruitCosts = this.getWeight() * this.getPrice();
-        System.out.println("Абрикос (вес " + this.getWeight() + " цена " + getPrice()+" грн )" + "стоит  " + fruitCosts+" грн");;
+        System.out.println("Абрикос (вес " + this.getWeight() + " цена " + getPrice() + " грн )" + "стоит  " + fruitCosts + " грн");
         printManufacturerInfo();
         return fruitCosts;
     }
