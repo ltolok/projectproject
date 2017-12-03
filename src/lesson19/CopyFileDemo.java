@@ -2,8 +2,7 @@ package lesson19;
 
 import java.io.*;
 
-public class CopyFileDemo
-{
+public class CopyFileDemo {
     public static void main(String[] args) {
         try (BufferedReader br = new BufferedReader(new FileReader("src\\file.txt"));
              BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("src\\buffWriter.txt"))) {
@@ -12,8 +11,8 @@ public class CopyFileDemo
                 System.out.println(s);
                 bufferedWriter.write(s);
                 bufferedWriter.newLine();
-                bufferedWriter.flush();
             }
+            bufferedWriter.flush();
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
         }
