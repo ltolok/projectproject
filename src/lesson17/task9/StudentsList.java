@@ -19,8 +19,8 @@ public class StudentsList {
         studentList.add(student5);
         for (Student student : studentList) {
             System.out.println(student);
-            System.out.print("Средний балл студента  " + student.getName() + "  = " + student.average(student));
-            if (student.average(student) >= 3) {
+            System.out.print("Средний балл студента  " + student.getName() + "  = " + student.average());
+            if (student.average() >= 3) {
                 student.setCourse(student.getCourse() + 1);
                 System.out.println(" (Переводится на следующий курс)");
                 System.out.println();

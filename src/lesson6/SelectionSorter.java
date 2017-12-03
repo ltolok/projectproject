@@ -29,7 +29,7 @@ public class SelectionSorter {
                     t = true;
                 }
             }
-            if (t != false) {
+            if (t) {
                 array[k] = array[i];
                 array[i] = x;
             }
