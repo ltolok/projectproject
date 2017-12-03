@@ -26,6 +26,8 @@ public abstract class Fruit {
         System.out.println("Made in Ukraine");
     }
 
-    public void fruitCosts() {
+    public double fruitCosts() {
+        double costs = 0;
+        return costs;
     }
 }

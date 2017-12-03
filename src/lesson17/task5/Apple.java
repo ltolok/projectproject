@@ -10,7 +10,7 @@ public class Apple extends Fruit {
 
     @Override
     public String toString() {
-        return "Apple{} " + super.toString()+"  цена  "+this.price;
+        return "Apple{} " + super.toString() + "  цена  " + this.price;
     }
 
     public void setPrice(double price) {
@@ -22,17 +22,11 @@ public class Apple extends Fruit {
 
     }
 
-    public static void main(String[] args) {
-        Apple apple1 = new Apple(0.2, 10.0);
-        Apple apple2 = new Apple(0.25, 12.0);
-        Apple apple3 = new Apple(0.3, 15.0);
-        apple1.fruitCosts();
-        apple2.fruitCosts();
-        apple3.fruitCosts();
-    }
-
-    public void fruitCosts() {
-        System.out.println(this.toString() + "  стоит  " + this.getWeight() * this.getPrice());
+    public double fruitCosts() {
+        double fruitCosts = this.getWeight() * this.getPrice();
+        System.out.println("Яблоко (вес " + this.getWeight() + " цена " + getPrice()+" грн )" + "стоит  " + fruitCosts+" грн");;
+        printManufacturerInfo();
+        return fruitCosts;
     }
 }
 
