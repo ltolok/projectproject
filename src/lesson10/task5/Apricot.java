@@ -20,9 +20,25 @@ public class Apricot extends Fruit {
     @Override
     public String toString() {
         return "Apricot{" +
-                "weight=" + weight +
+                "weight=" + getWeight() +
                 ", price=" + price +
                 "} " + super.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Apricot apricot = (Apricot) o;
+
+        return Double.compare(apricot.price, price) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        long temp = Double.doubleToLongBits(price);
+        return (int) (temp ^ (temp >>> 32));
     }
 
     public double fruitCosts() {

@@ -1,7 +1,7 @@
 package lesson10.task5;
 
 public abstract class Fruit {
-    public double weight;
+    private double weight;
 
     public Fruit(double weight) {
         this.weight = weight;
@@ -12,7 +12,6 @@ public abstract class Fruit {
     }
 
     public double getWeight() {
-
         return weight;
     }
 
@@ -22,7 +21,23 @@ public abstract class Fruit {
                 "weight=" + weight;
     }
 
-    public void printManufacturerInfo() {
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Fruit fruit = (Fruit) o;
+
+        return Double.compare(fruit.weight, weight) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        long temp = Double.doubleToLongBits(weight);
+        return (int) (temp ^ (temp >>> 32));
+    }
+
+    final void printManufacturerInfo() {
         System.out.println("Made in Ukraine");
     }
 

@@ -20,9 +20,29 @@ public class Pear extends Fruit {
     @Override
     public String toString() {
         return "Pear{" +
-                "weight=" + weight +
+                "weight=" + getWeight() +
                 ", price=" + price +
                 "} " + super.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+
+        Pear pear = (Pear) o;
+
+        return Double.compare(pear.price, price) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = super.hashCode();
+        long temp;
+        temp = Double.doubleToLongBits(price);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        return result;
     }
 
     public double fruitCosts() {
