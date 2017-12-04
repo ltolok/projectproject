@@ -1,4 +1,6 @@
 package lesson20;
 
-public class Halter {
+import java.io.Serializable;
+
+public class Halter implements Serializable{
 }
