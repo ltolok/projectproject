@@ -4,51 +4,55 @@ import java.util.Arrays;
 
 public class Bouquet {
     private static int quantity = 0;
-    private Flower flower;
-    private int number;
-    private Flower[] flowers = new Flower[5];
+    private Flower[] bouqet = new Flower[15];
 
-    public Bouquet(Flower flower, int number) {
-        this.flower = flower;
-        this.number = number;
+    public Bouquet(Flower flower, int k) {
+        bouqet = new Flower[k];
+        Arrays.fill(bouqet, flower);
     }
 
     public Bouquet(Flower[] f) {
-        this.number = f.length;
-        System.arraycopy(f, 0, this.flowers, 0, this.number);
-
+        bouqet = new Flower[f.length];
+        System.arraycopy(f, 0, this.bouqet, 0, f.length);
     }
 
     public static int getQuantity() {
         return quantity;
     }
 
-    public Flower getFlower() {
-        return flower;
-    }
-
-    public int getNumber() {
-        return number;
-    }
-
-    public Flower[] getFlowers() {
-        return flowers;
+    public Flower[] getBouqet() {
+        return bouqet;
     }
 
     public static void setQuantity(int quantity) {
         Bouquet.quantity = quantity;
     }
 
-    public void setFlower(Flower flower) {
-        this.flower = flower;
+    public void setBouqet(Flower[] bouqet) {
+        this.bouqet = bouqet;
     }
 
-    public void setNumber(int number) {
-        this.number = number;
+    @Override
+    public String toString() {
+        return "Bouquet{" +
+                "bouqet=" + Arrays.toString(bouqet) +
+                '}';
     }
 
-    public void setFlowers(Flower[] flowers) {
-        this.flowers = flowers;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Bouquet bouquet = (Bouquet) o;
+
+        // Probably incorrect - comparing Object[] arrays with Arrays.equals
+        return Arrays.equals(bouqet, bouquet.bouqet);
+    }
+
+    @Override
+    public int hashCode() {
+        return Arrays.hashCode(bouqet);
     }
 
     public static void main(String[] args) {
@@ -64,23 +68,18 @@ public class Bouquet {
         flowers[3] = new Tulip("Польша", 7);
         flowers[4] = new Tulip("Польша", 7);
         bouquets[2] = new Bouquet(flowers);
-        bouquets[2].bouquetPrice2();
+        bouquets[2].bouquetPrice();
         System.out.println("Всего продано " + quantity + "  цветов");
     }
 
     public void bouquetPrice() {
-        System.out.println("Цена букета из" + flower.toString() + "  " + "  =  " + flower.price() * this.number);
-        quantity = quantity + this.number;
-    }
-
-    public void bouquetPrice2() {
-        quantity = quantity + this.number;
+        quantity = quantity + bouqet.length;
         double price = 0;
-        for (int i = 0; i < this.number; i++) {
-            price = price + flowers[i].price();
+        for (int i = 0; i < bouqet.length; i++) {
+            price = price + bouqet[i].price();
         }
         System.out.println("Цена букета из : ");
-        for (Flower fq : flowers) {
+        for (Flower fq : bouqet) {
             System.out.println(fq);
         }
         System.out.println("= " + price);
