@@ -4,6 +4,7 @@ public class MyDemoException {
     public static void main(String[] args) {
         chekLogin("qwtryuееttro", "qwerrty", "qwerty");
         chekLogin("qwtryuееttrotytytytytytytyt", "qwerty", "qwerty");
+        chekLogin("qwtryuееttrotytytytytytytyt", "qwerty", "qwertty");
     }
 
     public static void chekLogin(String login, String password, String confirmPassword) {
