@@ -2,10 +2,11 @@ package lesson18;
 
 public class MyDemoException {
     public static void main(String[] args) {
-        cheklogin("qwtryuееttro", "qwerrty", "qwerty");
+        chekLogin("qwtryuееttro", "qwerrty", "qwerty");
+        chekLogin("qwtryuееttrotytytytytytytyt", "qwerty", "qwerty");
     }
 
-    static void cheklogin(String login, String password, String confirmPassword) {
+    public static void chekLogin(String login, String password, String confirmPassword) {
         try {
             if (login.length() >= 20) {
                 throw new WrongLoginException("Неправильный логин");
@@ -15,7 +16,6 @@ public class MyDemoException {
             }
         } catch (WrongLoginException | WrongPasswordException е) {
             System.out.println(е.getMessage());
-            ;
         } finally {
             System.out.println(login + "  " + password + "  " + confirmPassword);
         }
